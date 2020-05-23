@@ -962,7 +962,7 @@ config BIG_CLUSTER_MIN_FREQ_ADJUST
 
 config STATE_NOTIFIER
 	bool "State Notifier"
-	default n
+	default y
 	help
 	  A unified display state notifier for kernel drivers for easy porting
 	  between different devices.

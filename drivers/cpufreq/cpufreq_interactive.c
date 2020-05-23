@@ -36,6 +36,13 @@
 #define CREATE_TRACE_POINTS
 #include <trace/events/cpufreq_interactive.h>
 
+
+
+
+
+
+extern bool  state_suspended;    //from driver state notifier
+
 struct cpufreq_interactive_policyinfo {
 	struct timer_list policy_timer;
 	struct timer_list policy_slack_timer;
@@ -703,6 +710,7 @@ exit:
 
 static int cpufreq_interactive_speedchange_task(void *data)
 {
+
 	unsigned int cpu;
 	cpumask_t tmp_mask;
 	unsigned long flags;
